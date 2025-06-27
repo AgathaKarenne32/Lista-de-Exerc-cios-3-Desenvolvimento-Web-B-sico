@@ -1,0 +1,226 @@
+/* styles.css */
+
+/* --- Estilos Gerais e Box Model (Consolidado dos Exercícios 4, 5 e 6) --- */
+
+/* Estilos para o Cabeçalho */
+header {
+    background-color: #bb1919; /* Cor do Exercício 6 */
+    color: #f8f8f8; /* Cor do Exercício 5, bom contraste */
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #190857; /* Cor do Exercício 6 */
+    position: relative; /* Importante para posicionar o botão hambúrguer */
+    display: flex; /* Usar flexbox para alinhar conteúdo do header */
+    justify-content: space-between; /* Espaço entre título/parágrafo e nav/hambúrguer */
+    align-items: center; /* Alinhar itens verticalmente */
+}
+
+header h1, header p {
+    margin: 0; /* Remover margens padrão para melhor alinhamento */
+    flex-grow: 1; /* Permite que o título e parágrafo cresçam */
+}
+
+/* Estilos para o Conteúdo Principal */
+main {
+    background-color: #ff3679; /* Cor do Exercício 6 */
+    color: #222; /* Cor do Exercício 6 */
+    margin: 20px;
+    padding: 25px;
+    border: 2px dashed #007bff; /* Mantido do Exercício 4/5 */
+}
+
+/* Estilos para o Rodapé */
+footer {
+    background-color: #333; /* Cor consistente */
+    color: #f8f8f8; /* Cor consistente */
+    margin: 20px;
+    padding: 15px;
+    border: 2px dotted #ffc107; /* Cor consistente */
+    text-align: center;
+}
+
+/* --- Seletores e Propriedades (Exercício 5) --- */
+
+/* Estilo para todas as tags <h2> */
+h2 {
+    font-size: 1.8em;
+    text-decoration: underline;
+}
+
+/* Classe .destaque */
+.destaque {
+    font-style: italic;
+    background-color: #fffacd;
+    padding: 2px 5px;
+}
+
+/* ID #importante */
+#importante {
+    border-top: 5px solid #0000ff; /* Mudei para azul, pois o anterior (#fffacd) era igual ao background do .destaque */
+    padding-top: 10px;
+}
+
+/* --- Estilos da Galeria de Imagens (Exercício 6) --- */
+
+/* Contêiner Flexbox para centralizar e permitir quebra de linha */
+.galeria-container {
+    display: flex; /* Transforma o contêiner em um contêiner flexbox */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    padding: 20px;
+    background-color: #e9ecef; /* Um fundo leve para a galeria */
+    margin: 20px auto; /* Centraliza o próprio contêiner na página */
+    max-width: 1200px; /* Largura máxima para a galeria */
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Grid para organizar as imagens dentro do contêiner Flexbox */
+.galeria-grid {
+    display: grid; /* Transforma a galeria em um grid */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 4 colunas em telas maiores */
+    gap: 20px; /* Espaço entre os itens do grid */
+    padding: 10px;
+    width: 100%; /* Garante que o grid ocupe a largura total do seu contêiner flex */
+}
+
+.galeria-grid figure {
+    margin: 0; /* Remove a margem padrão do figure */
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.galeria-grid img {
+    max-width: 100%; /* Garante que a imagem se ajuste ao seu contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove o espaço extra abaixo da imagem */
+    border-radius: 4px; /* Cantos arredondados para as imagens */
+}
+
+.galeria-grid figcaption {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* --- Estilos e Media Queries para o Menu Hamburger (Exercício 7) --- */
+
+/* Esconde o botão hambúrguer por padrão em telas grandes */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+}
+
+/* Estilo das barras do hambúrguer */
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s; /* Transição suave para a animação (opcional) */
+}
+
+/* Estilos da Navegação Padrão para telas grandes */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Links lado a lado em telas grandes */
+    gap: 20px; /* Espaçamento entre os links */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #ddd;
+}
+
+/* Media Query para telas menores (<= 600px) */
+@media (max-width: 600px) {
+    /* Exibe o botão hambúrguer */
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Oculta a navegação padrão */
+    .main-nav {
+        display: none; /* Esconde a navegação por padrão */
+        flex-direction: column; /* Links um abaixo do outro no menu aberto */
+        position: absolute; /* Posiciona o menu sobre o conteúdo */
+        top: 100%; /* Abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: #f9f9f9; /* Fundo para o menu aberto */
+        border-top: 1px solid #ccc;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 999;
+    }
+
+    .main-nav.active {
+        display: flex; /* Mostra a navegação quando a classe 'active' está presente */
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Garante que os links fiquem em coluna */
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .main-nav li {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .main-nav a {
+        display: block; /* Ocupa a largura total do item da lista */
+        padding: 10px;
+    }
+
+    /* Opcional: Animação do botão hambúrguer */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* --- Media Queries da Galeria (Consolidado do Exercício 6) --- */
+@media (max-width: 768px) {
+    .galeria-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 3 colunas em tablets */
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-grid {
+        grid-template-columns: 1fr; /* 1 coluna em celulares */
+        gap: 10px;
+    }
+
+    .galeria-container {
+        padding: 10px;
+        margin: 10px auto;
+    }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página</title>
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Site</h1>
+        <p>Somos um site de receitas dedicado a oferecer as melhores receitas caseiras. Conheça um pouco mais sobre o que nos move.</p>
+
+        <button class="hamburger-menu" aria-label="Abrir menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Receitas</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Missão</h2>
+            <p class="destaque"> Nossa missão é trazer mais saúde e sustentabilidade, promovendo receitas sustentáveis e de boa qualidade não só para a saúde física, como também para o meio ambiente.</p>
+        </section>
+
+        <section>
+            <h2>Visão</h2>
+            <p id="importante">Almejamos ser líderes de mercado em nosso segmento, reconhecidos pela excelência, qualidade e compromisso com a sustentabilidade e a satisfação dos nossos colaboradores e parceiros.</p>
+        </section>
+
+        <h2>Nossa Galeria de Imagens</h2>
+        <div class="galeria-container">
+            <div class="galeria-grid">
+                <figure>
+                    <img src="https://via.placeholder.com/200x150/FF5733/FFFFFF?text=Imagem+1" alt="Descrição da Imagem 1">
+                    <figcaption>Legenda da Imagem 1</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/200x150/33FF57/FFFFFF?text=Imagem+2" alt="Descrição da Imagem 2">
+                    <figcaption>Legenda da Imagem 2</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/200x150/3357FF/FFFFFF?text=Imagem+3" alt="Descrição da Imagem 3">
+                    <figcaption>Legenda da Imagem 3</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/200x150/FF33FF/FFFFFF?text=Imagem+4" alt="Descrição da Imagem 4">
+                    <figcaption>Legenda da Imagem 4</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/200x150/FFFF33/000000?text=Imagem+5" alt="Descrição da Imagem 5">
+                    <figcaption>Legenda da Imagem 5</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/200x150/33FFFF/000000?text=Imagem+6" alt="Descrição da Imagem 6">
+                    <figcaption>Legenda da Imagem 6</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/200x150/8A2BE2/FFFFFF?text=Imagem+7" alt="Descrição da Imagem 7">
+                    <figcaption>Legenda da Imagem 7</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/200x150/FFD700/000000?text=Imagem+8" alt="Descrição da Imagem 8">
+                    <figcaption>Legenda da Imagem 8</figcaption>
+                </figure>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Meu site. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.querySelector('.hamburger-menu');
+            const mainNav = document.querySelector('.main-nav');
+
+            hamburgerButton.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                hamburgerButton.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
